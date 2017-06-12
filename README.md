@@ -1,6 +1,6 @@
 # sockets-storyboard
 
-###Features
+##Features
 
 - Multiple clients access the storyboard and upload figures that will be displayed to the other clients.
 - You can upload figures by drag and dropping or traditional file upload. Only image/png, image/jpeg and image/gif formats are supported.
@@ -9,13 +9,13 @@
 - Status bar in top right displays the number of active sockets.
 - Status bar in top right displays activity such as user typing.
 
-###Backlog
+##Backlog
 
 - Persisting inline edits of figure descriptions.
 - Support for video/mp4 with automated thumbnail generation.
 - Uploads for mobile.
 
-###Setup Instructions
+##Setup Instructions
 
 1. Download and extract the source to your machine - eg c:/wamp/www/sockets-storyboard
 2. From your commnd-line tool run: npm start
@@ -26,13 +26,13 @@
 7. Mouseover a figure on the storyboard and start to edit the description -notice other connected clients will display the edits in real-time.
 
 
-###How it Works
+##How it Works
 
 The application is designed to be fast and light. On the client-side vanilla JavaScript is used for interactions and DOM manipulation without overhead or dependencies on jQuery or view libraries. Communication betwen the client-side and server-side is handled using Websockets (socket.io). On the serversde ExpressJS is used is a minimal  web application framework (scaffolding, routing and file uploads). File uploads are handled using AJAX and a progress bar is also implemented for the larger file uploads.
 
 To address the data persistance needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
 
-###Stack used
+##Stack used
 
  * [VanillaJS](http://vanilla-js.com "VanillaJS") a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
  * [Node.js®](https://nodejs.org/en "Node.js®") is a JavaScript runtime built on Chrome's V8 JavaScript engine.
