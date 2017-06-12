@@ -37,7 +37,7 @@ To address the data persistance needs, LokiJS is used for its fast, in-memory do
  * [VanillaJS](http://vanilla-js.com "VanillaJS") a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
  * [Node.js®](https://nodejs.org/en "Node.js®") is a JavaScript runtime built on Chrome's V8 JavaScript engine.
  * [Socket.IO](https://socket.io "Socket.IO") enables real-time bidirectional event-based communication.
- * [ExpressJS](https://expressjs.com "ExpressJS")  is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+ * [ExpressJS](https://expressjs.com "ExpressJS")  is a minimal and flexible Node.js web application framework.
  * [LokiJS](https://github.com/techfort/LokiJS "LokiJS") A fast, in-memory document-oriented datastore for node.js, browser and cordova.
  * [GruntJS](https://gruntjs.com "GruntJS") The JavaScript Task Runner.
 
