@@ -1,0 +1,40 @@
+
+html {
+  section#upload {
+    div#upload-content {
+      display: block;
+      box-sizing: border-box;
+      border: 1px dashed $gray;
+      background: $white;
+      color: $gray;
+      -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+      transition: outline-offset .15s ease-in-out, background-color .15s linear;
+      text-align: center;
+      font-size: 2em;
+      padding: 1em;
+      margin: 1em;
+      height: auto;
+      opacity: 0.5;
+
+      &.hover {
+        background: $green;
+        border: 1px dashed $white;
+        border: none;
+        color: $white;
+        opacity: 0.75;
+      }
+      &:hover {
+        @extend .hover;
+      }
+
+      form {
+        display: block;
+        background: transparent;
+        font-size: 75%;
+        padding: 0 0;
+        margin: 1em auto 0.5em auto;
+        width: 13em;
+      }
+    }
+  }
+}

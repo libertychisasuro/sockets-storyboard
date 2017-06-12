@@ -1,0 +1,85 @@
+html {
+  section#storyboard {
+    max-width: 100%;
+    min-height: 10em;
+    height: auto;
+    width: auto;
+    padding: 5.5em 0 0 0;
+    box-sizing: border-box;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    ul.figures {
+      list-style: none;
+      height: auto;
+      box-sizing: border-box;
+      background: transparent;
+      padding: 1em 1em;
+      margin: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      flex-direction: row;
+      flex-wrap: wrap;
+      flex-flow: row wrap;
+      align-content: flex-end;
+
+      li.figure {
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-sizing: border-box;
+        text-align: center;
+        background: $white;
+        padding: 0em;
+        margin: 1em;
+        max-height: 11em;
+        display: block;
+        position: relative;
+        &:hover {
+          -webkit-transition: all 100ms ease-in;
+          -webkit-transform: scale(1.5);
+          -ms-transition: all 100ms ease-in;
+          -ms-transform: scale(1.5);
+          -moz-transition: all 200ms ease-in;
+          -moz-transform: scale(1.5);
+          transition: all 100ms ease-in;
+          transform: scale(1.5);
+          z-index: 999;
+        }
+      }
+
+      li.figure img {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+        transition: all 100ms ease-out;
+        max-width: none;
+        max-height: 7em;
+        min-height: 7em;
+      }
+
+      li.figure span {
+        display: block;
+        padding: 1em;
+      }
+
+      li.figure span:focus {
+        border: none;
+        outline: 0 solid transparent;
+        background: $light-yellow;
+      }
+
+      li.figure i {
+        color: $gray;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        z-index: 998;
+        top: 0.25em;
+        right: 0.25em;
+      }
+    }
+  }
+}

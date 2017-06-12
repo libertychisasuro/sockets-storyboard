@@ -1,0 +1,36 @@
+html {
+    body {
+        background: $light-gray;
+    }
+
+    .flexbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .flex-start {
+            align-self: flex-start;
+        }
+
+        .flex-end {
+            align-self: flex-end;
+        }
+    }
+
+    .flexbox-row {
+        flex-direction: row;
+    }
+
+    .flexbox-column {
+        flex-direction: column;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+}
+

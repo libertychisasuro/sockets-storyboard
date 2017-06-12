@@ -1,0 +1,23 @@
+
+$blue: #03a4c9;
+$white: #fff;
+$black: #111111;
+$light-gray: #f1f1f1;
+$light-yellow: #ffff99;
+$gray: #898989;
+$dark-gray: #58585a;
+$green: #00CC71;
+$lime: #00ff00;
+$navy: #0d47a1;
+$red: #cc0000;
+
+@import 'normalize';
+@import 'typography';
+@import 'layout';
+@import 'state';
+@import 'animation';
+@import 'nav';
+@import 'progress';
+@import 'storyboard';
+@import 'upload';
+
