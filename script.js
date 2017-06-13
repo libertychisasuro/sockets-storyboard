@@ -29,10 +29,10 @@ var Storyboard = (function() {
 
     var typing = false;
     var typingTimeout = undefined;
+    var TIMEOUT_INTERVAL = 1000;
 
     var typingCompleteCallback = function() {
-        typing = false;
-        socket.emit('typing', false);
+        socket.emit('typingComplete');
     };
 
     var getFigureId = function(id) {
@@ -94,36 +94,46 @@ var Storyboard = (function() {
         }, true);
     };
 
+    /**
+     * @link http://keycode.info/
+     * @param label
+     */
     var initLabelEditing = function(label) {
         label.contentEditable = 'true';
 
         label.addEventListener('keydown', function(e) {
-            if(e.keyCode === 13) {
-                e.preventDefault();
-                return false;
-            }
+            if (this === document.activeElement) {
+                if(e.keyCode === 8) {
+                    return true;
+                }
 
-            if(this.textContent.length === 18 && e.keyCode !== 8) {
-                e.preventDefault();
-            }
+                if(e.keyCode === 13) {
+                    e.preventDefault();
+                    return false;
+                }
 
-            socket.emit('syncText', {
-                id: this.id,
-                textContent: this.textContent
-            });
+                if(this.textContent.length === 18) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
         }, true);
     };
 
     var initLabelActivity = function(label) {
-        label.addEventListener('keypress', function(e) {
-            if (e.which !== 13) {
-                if (typing === false && this === document.activeElement) {
-                    typing = true;
-                    socket.emit('typing', true);
-                } else {
-                    clearTimeout(typingTimeout);
-                    typingTimeout = setTimeout(typingCompleteCallback, 3000);
-                }
+        label.addEventListener('keyup', function(e) {
+            if (this === document.activeElement) {
+                clearTimeout(typingTimeout);
+
+                socket.emit('typing', true);
+                socket.emit('typingText', {
+                    id: this.id,
+                    textContent: this.textContent
+                });
+
+                typingTimeout = setTimeout(function () {
+                    typingCompleteCallback();
+                }, TIMEOUT_INTERVAL);
             }
         }, true);
     };
@@ -166,7 +176,7 @@ var Storyboard = (function() {
         document.getElementById('fileInput').value = '';
     };
 
-    var initializeDragAndDrop = function() {
+    var initDragAndDrop = function() {
         var fileInput = document.getElementById('fileInput');
 
         fileInput.addEventListener('change', function(e) {
@@ -232,19 +242,13 @@ var Storyboard = (function() {
             document.getElementById(target.id).innerText = target.textContent;
         });
 
-        socket.on('isTyping', function(reponse) {
-            if (reponse.message) {
-                document.getElementById('activity').innerText = reponse.message;
-                typingTimeout = setTimeout(typingCompleteCallback, 3000);
-            } else {
-                /** Request storyboard status */
-                socket.emit('typingComplete');
-            }
+        socket.on('isTyping', function(message) {
+            document.getElementById('activity').innerText = message;
         });
     };
 
     return {
-        initializeDragAndDrop: initializeDragAndDrop,
+        initDragAndDrop: initDragAndDrop,
         initMediaQuery: initMediaQuery,
         initSocketBindings: initSocketBindings
     };
@@ -257,7 +261,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     Storyboard.initSocketBindings();
     Storyboard.initMediaQuery();
-    Storyboard.initializeDragAndDrop();
+    Storyboard.initDragAndDrop();
 
     //debugger;
 

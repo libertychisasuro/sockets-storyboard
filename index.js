@@ -77,16 +77,14 @@ io.on('connection', function(socket) {
     });
 
     socket.on('typing', function() {
-        socket.broadcast.emit('isTyping', {
-            message: socket.id + ' is typing ..'
-        });
+        io.emit('isTyping', socket.id + ' is typing ..');
     });
 
     socket.on('typingComplete', function() {
         io.emit('syncSockets', io.engine.clientsCount);
     });
 
-    socket.on('syncText', function(element) {
+    socket.on('typingText', function(element) {
         socket.broadcast.emit('syncText', element);
     });
 
