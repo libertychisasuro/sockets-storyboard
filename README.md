@@ -20,7 +20,9 @@
 
 ## Setup Instructions
 
-1. Download and extract the source to your local folder.
+Download and install Node.js from [https://nodejs.org/en/download](https://nodejs.org/en/download)
+
+1. Download the source to a local folder.
 2. From your command-line go sockets-storyboard/ and run: *npm start*
 3. Open your first browser (first client) and go to localhost:3000
 4. Open your second browser (second client) and go to localhost:3000
