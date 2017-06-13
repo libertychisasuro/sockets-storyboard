@@ -35,7 +35,7 @@ Download and install Node.js from [https://nodejs.org/en/download](https://nodej
 
 ## How it Works
 
-The application is designed to be fast and light. On the client-side vanilla JavaScript is used for interactions and DOM manipulation without overhead or dependencies on jQuery or view libraries. Communication betwen the client-side and server-side is handled using Websockets (socket.io). On the serversde ExpressJS is used is a minimal  web application framework (scaffolding, routing and file uploads). File uploads are handled using AJAX.
+On the client-side vanilla JavaScript is used for interactions and DOM manipulation for minimal overhead or dependencies. Communication between the client-side and server-side is handled using Websockets (socket.io). On the server-side ExpressJS is used as a minimal web application framework (scaffolding, routing and file uploads). File uploads are handled using AJAX.
 
 To address the data persistence needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
 
