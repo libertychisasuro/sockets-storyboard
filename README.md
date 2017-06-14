@@ -23,7 +23,12 @@
 Download and install Node.js from [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
 1. Download the source to a local folder.
-2. From your command-line go sockets-storyboard/ and run: *npm start*
+2. From your command-line go sockets-storyboard/ and run: 
+
+```
+$ npm start
+```
+
 3. Open your first browser (first client) and go to localhost:3000
 4. Open your second browser (second client) and go to localhost:3000
 5. On application load you will see some previously added figures on the story board.
