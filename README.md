@@ -33,7 +33,7 @@ npm start
 
 ## Tests Instructions
 
-2. From your terminal go to sockets-storyboard/ and run: 
+From your terminal go to sockets-storyboard/ and run: 
 ```
 npm test
 ```
