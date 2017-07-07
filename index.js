@@ -15,24 +15,24 @@ var COLLECTION_NAME = 'storyboard';
 var UPLOAD_PATH = './uploads/';
 var collection = null;
 
-var onDataLoadedCallback = function() {
+var onDatabaseReady = function() {
 
 };
 
 /** autoloadCallback referenced in loki constructor */
-var databaseInitialize = function() {
+var autoloadCallback = function() {
     collection = db.getCollection(COLLECTION_NAME);
 
     if (collection === null) {
         collection = db.addCollection(COLLECTION_NAME);
     }
 
-    onDataLoadedCallback();
+    onDatabaseReady();
 };
 
 var db = new Loki(DB_NAME, {
     autoload: true,
-    autoloadCallback : databaseInitialize,
+    autoloadCallback : autoloadCallback,
     autosave: true,
     autosaveInterval: 0,
     persistenceMethod: 'fs'
