@@ -1,7 +1,3 @@
-/**
- * Created by lchisasuro on 08/06/2017.
- */
-
 var Storyboard = (function() {
   
     var socket = io();
@@ -145,7 +141,7 @@ var Storyboard = (function() {
 
         if(files.length === 0) return console.log('No files to upload');
 
-        formData.append('uploadForm', file);
+        formData.append('fileInput', file);
 
         xhr.open('post', '/upload', true);
         xhr.upload.onprogress = function (e) {
@@ -247,10 +243,28 @@ var Storyboard = (function() {
         });
     };
 
+    var drawConnectors = function() {
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        var namespace = svg.namespaceURI;
+        var line = document.createElementNS(namespace, 'line');
+
+        line.setAttribute('x1', 0);
+        line.setAttribute('y1', 0);
+        line.setAttribute('x2', 500);
+        line.setAttribute('y2', 500);
+        line.setAttribute('stroke','#00cc00');
+        line.setAttribute('stroke-width', 2);
+
+        svg.appendChild(line);
+
+        figures.appendChild(svg);
+    };
+
     return {
         initDragAndDrop: initDragAndDrop,
         initMediaQuery: initMediaQuery,
-        initSocketBindings: initSocketBindings
+        initSocketBindings: initSocketBindings,
+        drawConnectors: drawConnectors
     };
 
 })();

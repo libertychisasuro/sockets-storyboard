@@ -1,6 +1,3 @@
-/**
- * Created by lchisasuro on 08/06/2017.
- */
 
 var express = require('express');
 var expressFileUpload = require('express-fileupload');
@@ -11,14 +8,15 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require('fs');
+var server;
 
-var DB_NAME = 'db.json';
+var DB_NAME = './loki/db.json';
 var COLLECTION_NAME = 'storyboard';
 var UPLOAD_PATH = './uploads/';
 var collection = null;
 
 var onDataLoadedCallback = function() {
-    console.log('Database ready');
+
 };
 
 /** autoloadCallback referenced in loki constructor */
@@ -36,7 +34,7 @@ var db = new Loki(DB_NAME, {
     autoload: true,
     autoloadCallback : databaseInitialize,
     autosave: true,
-    autosaveInterval: 5000,
+    autosaveInterval: 0,
     persistenceMethod: 'fs'
 });
 
@@ -56,13 +54,13 @@ var deleteFromCollection = function(name) {
 /** Handle socket events after client connects */
 io.on('connection', function(socket) {
 
-    console.log('Socket ' + socket.id + ' connected');
+    console.info('Socket ' + socket.id + ' connected');
 
     socket.on('disconnect', function(){
         socket.leave('storyboard');
         io.emit('syncSockets', io.engine.clientsCount);
 
-        console.log('Socket ' + socket.id + ' disconnected');
+        console.info('Socket ' + socket.id + ' disconnected');
     });
 
     socket.join('storyboard');
@@ -101,8 +99,8 @@ io.on('connection', function(socket) {
 
 
 /** The http server listen on port 3000. */
-http.listen(3000, function() {
-    console.log('listening on *:3000');
+server = http.listen(3000, function() {
+    console.info('listening on *:3000');
 });
 
 /** Express middle-ware configurations */
@@ -110,10 +108,7 @@ app.use(express.static(__dirname + '/'));
 
 app.use(expressFileUpload({
     safeFileNames: false,
-    preserveExtension: true,
-    limits: {
-        fileSize: 50 * 1024 * 1024
-    }
+    preserveExtension: true
 }));
 
 
@@ -125,19 +120,25 @@ app.get('/', function(request, response) {
 
 /** File uploads route */
 app.post('/upload', function(request, response) {
-    var file = request.files.uploadForm || null;
-    var fileName = file.name;
+    var file;
+    var fileName;
 
     if (!request.files) {
         return response.status(400).send('No files uploaded');
     }
 
-    file.mv(UPLOAD_PATH + fileName, function(error) {
+    if (!request.files.fileInput) {
+        return response.status(400).send('No upload form found');
+    }
 
+    file = request.files.fileInput;
+    fileName = request.files.fileInput.name;
+
+    file.mv(UPLOAD_PATH + fileName, function(error) {
         addToCollection({
             name : file.name,
             description:  file.name,
-            fileType: file.type
+            mimetype: file.mimetype
         });
 
         io.emit('syncStoryboardOnUpload');
@@ -149,3 +150,9 @@ app.post('/upload', function(request, response) {
         }
     });
 });
+
+server.on('close', function() {
+    //db.close();
+});
+
+module.exports = server;
