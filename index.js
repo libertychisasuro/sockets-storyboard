@@ -16,7 +16,7 @@ var UPLOAD_PATH = './uploads/';
 var collection = null;
 
 var onDatabaseReady = function() {
-
+    
 };
 
 /** autoloadCallback referenced in loki constructor */
@@ -34,7 +34,7 @@ var db = new Loki(DB_NAME, {
     autoload: true,
     autoloadCallback : autoloadCallback,
     autosave: true,
-    autosaveInterval: 0,
+    autosaveInterval: 1000,
     persistenceMethod: 'fs'
 });
 
@@ -58,6 +58,7 @@ io.on('connection', function(socket) {
 
     socket.on('disconnect', function(){
         socket.leave('storyboard');
+
         io.emit('syncSockets', io.engine.clientsCount);
 
         console.info('Socket ' + socket.id + ' disconnected');
@@ -75,7 +76,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('typing', function() {
-        io.emit('isTyping', socket.id + ' is typing ..');
+        io.emit('isTyping', socket.id);
     });
 
     socket.on('typingComplete', function() {

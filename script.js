@@ -58,11 +58,16 @@ var Storyboard = (function() {
 
             figures.appendChild(figure);
 
+            figure.setAttribute('draggable', 'true');
             figure.setAttribute('class', 'figure');
             figure.setAttribute('id', figureId);
             figure.appendChild(image);
             figure.appendChild(label);
             figure.appendChild(icon);
+
+            figure.addEventListener('dragstart', function() {
+                //@todo
+            });
 
             label.setAttribute('id', labelId);
             label.appendChild(labelText);
@@ -238,8 +243,8 @@ var Storyboard = (function() {
             document.getElementById(target.id).innerText = target.textContent;
         });
 
-        socket.on('isTyping', function(message) {
-            document.getElementById('activity').innerText = message;
+        socket.on('isTyping', function(socketId) {
+            document.getElementById('activity').innerText = socketId + ' is typing ..';
         });
     };
 

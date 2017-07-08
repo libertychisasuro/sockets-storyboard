@@ -1,4 +1,4 @@
 
 --reporter list
---timeout 1000
+--timeout 5000
 
