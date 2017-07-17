@@ -24,8 +24,13 @@ Download and install Node.js from [https://nodejs.org/en/download](https://nodej
 
 1. Download the source to a local folder.
 2. From your terminal go to sockets-storyboard/ and run: 
+
+Install project dependencies
 ```
 npm install
+```
+Start application
+```
 npm start
 ```
 3. Open your first browser (first client) and go to localhost:3000
@@ -34,7 +39,7 @@ npm start
 
 ## Tests Instructions
 
-From your terminal go to sockets-storyboard/ and run: 
+1. From your terminal go to sockets-storyboard/ and run: 
 ```
 npm test
 ```
