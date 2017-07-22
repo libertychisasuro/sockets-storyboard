@@ -8,6 +8,12 @@
 - Status bar in top right displays the number of active sockets.
 - Status bar in top right displays activity such as user typing.
 
+## How it Works
+
+On the client-side vanilla JavaScript is used for interactions and DOM manipulation - no dependencies. Communication between the client-side and server-side is handled using Websockets (socket.io). On the server-side ExpressJS is used as a minimal web application framework (scaffolding, routing and file uploads). File uploads are handled using AJAX.
+
+To address the data persistence needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
+
 ## Backlog
 
 - Persist inline edits of figure descriptions.
@@ -46,12 +52,6 @@ npm test
 
 - Chrome
 - Firefox
-
-## How it Works
-
-On the client-side vanilla JavaScript is used for interactions and DOM manipulation - no dependencies. Communication between the client-side and server-side is handled using Websockets (socket.io). On the server-side ExpressJS is used as a minimal web application framework (scaffolding, routing and file uploads). File uploads are handled using AJAX.
-
-To address the data persistence needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
 
 ## Stack
 
