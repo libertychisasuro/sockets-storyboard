@@ -20,8 +20,6 @@
 
 ## Setup Instructions
 
-Download and install Node.js from [https://nodejs.org/en/download](https://nodejs.org/en/download)
-
 1. Download the source to a local folder.
 2. From your terminal go to sockets-storyboard/ and run: 
 
