@@ -18,7 +18,7 @@
 - Validation for large files.
 - Uploads for mobile.
 
-## Setup Instructions
+## Setup
 
 1. Download the source to a local folder.
 2. From your terminal go to sockets-storyboard/ and run: 
@@ -35,7 +35,7 @@ npm start
 4. Open your second browser (second client) and go to localhost:3000
 5. On application load you will see some previously added figures on the story board.
 
-## Tests Instructions
+## Tests
 
 1. From your terminal go to sockets-storyboard/ and run:
 ```
