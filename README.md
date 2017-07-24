@@ -14,6 +14,8 @@ On the client-side vanilla JavaScript is used for interactions and DOM manipulat
 
 To address the data persistence needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
 
+![Screenshot](/screenshots/screenshot.png?raw=true "")
+
 ## Backlog
 
 - Persist inline edits of figure descriptions.
