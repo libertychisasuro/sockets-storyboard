@@ -9,9 +9,8 @@
     <title>Storyboard</title>
 
     <!-- Styles -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/node_modules/material-design-icons/iconfont/material-icons.css">
+    <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/main.css.map">
     <!-- Styles -->
@@ -23,31 +22,45 @@
 
 <body>
 
-<main id="main">
-    <nav>
-        <span id="activity" class="right"></span>
-        <span id="logo" class="left">Storyboard</span>
-    </nav>
-
-    <progress id="progress" max="100" value="0">0</progress>
-
-    <section id="storyboard" class="storyboard">
-        <ul id="figures" class="figures flexbox flexbox-row"></ul>
-    </section>
-
-    <section id="upload" class="upload">
-        <div id="upload-content">
-            <div>Drop files here or choose file to upload.</div>
-            <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
-                <input type="file" id="fileInput" name="fileInput" accept="image/gif, image/jpeg, image/png"/>
-            </form>
+    <main id="main">
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper blue">
+                    <a href="#" class="brand-logo">sockets-storyboard</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a id="activity"></a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </section>
-</main>
+        <div class="progress">
+            <div class="determinate" id="progress"></div>
+        </div>
 
-<!-- Scripts -->
-<script src="/script.js"></script>
-<!-- Scripts -->
+        <section id="storyboard" class="storyboard">
+            <ul id="figures" class="figures flexbox flexbox-row"></ul>
+        </section>
 
+        <section id="upload" class="upload">
+            <div id="upload-content">
+                <div>Drop files here or choose file to upload.</div>
+                <div class="file-field input-field">
+                    <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+                        <div class="btn blue">
+                            <span>File</span>
+                            <input type="file" id="fileInput" name="fileInput" accept="image/gif, image/jpeg, image/png"/>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="/script.js"></script>
+    <!-- Scripts -->
 </body>
 </html>

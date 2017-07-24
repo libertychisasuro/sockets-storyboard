@@ -1,17 +1,5 @@
 html {
-  nav {
-    height: 4em;
-    background: $white;
-    width: 100%;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-
-    span {
-      display: block;
-      font-size: 1em;
-      padding: 1em;
-      margin: 0.5em;
-    }
+  .brand-logo {
+    margin-left: 1em;
   }
 }

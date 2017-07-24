@@ -1,7 +1,6 @@
 {
   "name": "sockets-storyboard",
   "version": "0.0.1",
-  "description": "Storyboard collaboration application using Socket.io, NodeJS and ExpressJS.",
   "scripts": {
     "start": "node index.js",
     "test": "mocha"
@@ -16,6 +15,8 @@
     "grunt-sass": "^2.0.0",
     "grunt-svgstore": "^1.0.0",
     "lokijs": "^1.4.3",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.100.1",
     "socket.io": "^2.0.2",
     "socket.io-client": "^2.0.3",
     "underscore": "^1.8.3"

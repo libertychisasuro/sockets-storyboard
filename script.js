@@ -151,9 +151,7 @@ var Storyboard = (function() {
         xhr.open('post', '/upload', true);
         xhr.upload.onprogress = function (e) {
             if (e.lengthComputable) {
-                var complete = (e.loaded / e.total * 100 | 0);
-                progress.value = complete;
-                console.log('Progress ' + complete + '%');
+                progress.style.width = (e.loaded / e.total * 100 | 0) + '%';
             }
         };
 
@@ -170,7 +168,7 @@ var Storyboard = (function() {
     };
 
     var resetProgress = function() {
-        progress.value = 0;
+        progress.style.width = '0%';
     };
 
     var resetFileInput = function() {

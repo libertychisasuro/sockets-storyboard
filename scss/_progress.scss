@@ -1,18 +1,15 @@
 html {
-  progress {
-    width: 100%;
-    display: block;
-    height: 0.25em;
-    z-index: 999;
-    position: fixed;
-    top: 4em;
-  }
+  $blue: blue;
+  $green: green;
+  $yellowgreen: yellowgreen;
+  $transparent: transparent;
 
-  progress::-webkit-progress-bar {
-    background: $white;
-  }
+  .progress {
+    margin:0 auto;
+    background-color: $transparent;
 
-  progress::-webkit-progress-value {
-    background: $green;
+    .determinate {
+      background-color: $yellowgreen;
+    }
   }
 }
