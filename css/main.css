@@ -160,7 +160,7 @@ html .progress { margin: 0 auto; background-color: transparent; }
 html .progress .determinate { background-color: yellowgreen; }
 
 html section#storyboard { max-width: 100%; min-height: 10em; height: auto; width: auto; margin: 2em auto 0 auto; box-sizing: border-box; background: transparent; display: flex; flex-direction: row; align-items: center; justify-content: center; }
-html section#storyboard ul.figures { list-style: none; height: auto; box-sizing: border-box; background: transparent; padding: 1em 1em; margin: 0; display: flex; align-items: center; justify-content: left; flex-direction: row; flex-wrap: wrap; flex-flow: row wrap; align-content: flex-end; }
+html section#storyboard ul.figures { list-style: none; height: auto; box-sizing: border-box; background: transparent; margin: 0; display: flex; align-items: center; justify-content: left; flex-direction: row; flex-wrap: wrap; flex-flow: row wrap; align-content: flex-end; }
 html section#storyboard ul.figures li.figure { border: none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); box-sizing: border-box; text-align: center; background: #fff; padding: 0em; margin: 1em; max-height: 11em; display: block; position: relative; }
 html section#storyboard ul.figures li.figure:hover { -webkit-transition: all 100ms ease-in; -webkit-transform: scale(1.5); -ms-transition: all 100ms ease-in; -ms-transform: scale(1.5); -moz-transition: all 200ms ease-in; -moz-transform: scale(1.5); transition: all 100ms ease-in; transform: scale(1.5); z-index: 999; }
 html section#storyboard ul.figures li.figure img { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2); transition: all 100ms ease-out; max-width: none; max-height: 7em; min-height: 7em; }
