@@ -28,9 +28,6 @@ To address the data persistence needs, LokiJS is used for its fast, in-memory do
 
 ## Setup
 
-1. Download the source to a local folder.
-2. From your terminal go to sockets-storyboard/ and run: 
-
 _Install project dependencies_
 ```
 npm install
