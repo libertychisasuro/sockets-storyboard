@@ -14,7 +14,7 @@ On the client-side vanilla JavaScript is used for interactions and DOM manipulat
 
 To address the data persistence needs, LokiJS is used for its fast, in-memory document-oriented database. LokiJS synchs from the in-memory storage to a local JSON file.
 
-![Screenshot](/screenshots/screenshot.png?raw=true "")
+![Screenshot](/screenshots/screenshot.gif?raw=true)
 
 ## Backlog
 
@@ -29,13 +29,17 @@ To address the data persistence needs, LokiJS is used for its fast, in-memory do
 ## Setup
 
 _Install project dependencies_
+
 ```
 npm install
 ```
+
 _Start application_
+
 ```
 npm start
 ```
+
 3. Open your first browser (first client) and go to localhost:3000
 4. Open your second browser (second client) and go to localhost:3000
 5. On application load you will see some previously added figures on the story board.
@@ -43,6 +47,7 @@ npm start
 ## Tests
 
 1. From your terminal go to sockets-storyboard/ and run:
+
 ```
 npm test
 ```
@@ -54,10 +59,9 @@ npm test
 
 ## Stack
 
- * [VanillaJS](http://vanilla-js.com "VanillaJS") a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
- * [Node.js](https://nodejs.org/en "Node.js�") is a JavaScript runtime built on Chrome's V8 JavaScript engine.
- * [Socket.IO](https://socket.io "Socket.IO") enables real-time bidirectional event-based communication.
- * [ExpressJS](https://expressjs.com "ExpressJS")  is a minimal and flexible Node.js web application framework.
- * [LokiJS](https://github.com/techfort/LokiJS "LokiJS") A fast, in-memory document-oriented datastore for node.js, browser and cordova.
- * [GruntJS](https://gruntjs.com "GruntJS") The JavaScript Task Runner.
-
+- [VanillaJS](http://vanilla-js.com "VanillaJS") a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.
+- [Node.js](https://nodejs.org/en "Node.js�") is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [Socket.IO](https://socket.io "Socket.IO") enables real-time bidirectional event-based communication.
+- [ExpressJS](https://expressjs.com "ExpressJS") is a minimal and flexible Node.js web application framework.
+- [LokiJS](https://github.com/techfort/LokiJS "LokiJS") A fast, in-memory document-oriented datastore for node.js, browser and cordova.
+- [GruntJS](https://gruntjs.com "GruntJS") The JavaScript Task Runner.
